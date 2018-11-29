@@ -24,6 +24,13 @@ define([
       } else {
         this.logoEnabled = false;
       }
+
+      Adapt.on('navigation:clickLogoButton', function() {
+        // Always navigate to the course menu
+        Backbone.history.navigate('#', {
+          trigger: true
+        });
+      });
     },
 
     onAddLogo: function(pageModel) {
